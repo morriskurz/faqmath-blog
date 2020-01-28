@@ -1,0 +1,32 @@
+[debug] [2020-01-28T14:19:40.743Z] ----------------------------------------------------------------------
+[debug] [2020-01-28T14:19:40.745Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Morris Kurz\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:list
+[debug] [2020-01-28T14:19:40.746Z] CLI Version:   7.12.1
+[debug] [2020-01-28T14:19:40.746Z] Platform:      win32
+[debug] [2020-01-28T14:19:40.746Z] Node Version:  v12.14.1
+[debug] [2020-01-28T14:19:40.747Z] Time:          Tue Jan 28 2020 15:19:40 GMT+0100 (Central European Standard Time)
+[debug] [2020-01-28T14:19:40.747Z] ----------------------------------------------------------------------
+[debug] [2020-01-28T14:19:40.747Z] 
+[debug] [2020-01-28T14:19:40.754Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-28T14:19:40.754Z] > authorizing via signed-in user
+[debug] [2020-01-28T14:19:40.759Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-28T14:19:40.759Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-28T14:19:58.245Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-28T14:19:58.269Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=1000  
+ 
+[debug] [2020-01-28T14:20:17.798Z] Server Error. socket hang up
+[debug] [2020-01-28T14:20:17.804Z] FirebaseError: Server Error. socket hang up
+    at Request._callback (C:\Users\Morris Kurz\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:30:31)
+    at self.callback (C:\Users\Morris Kurz\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:223:5)
+    at Request.EventEmitter.emit (domain.js:475:20)
+    at Request.onRequestError (C:\Users\Morris Kurz\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:881:8)
+    at ClientRequest.emit (events.js:228:7)
+    at ClientRequest.EventEmitter.emit (domain.js:475:20)
+    at TLSSocket.socketOnEnd (_http_client.js:440:9)
+    at TLSSocket.emit (events.js:228:7)
+    at TLSSocket.EventEmitter.emit (domain.js:475:20)
+    at endReadableNT (_stream_readable.js:1185:12)
+    at processTicksAndRejections (internal/process/task_queues.js:81:21)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
