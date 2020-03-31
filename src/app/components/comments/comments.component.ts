@@ -70,3 +70,9 @@ export class CommentsComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 }
+
+@Component({selector: 'app-comments', template: ''})
+export class CommentsComponentStub{
+  @Input()
+  blogId;
+}

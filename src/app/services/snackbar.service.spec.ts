@@ -1,12 +1,28 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
 
 import { SnackbarService } from './snackbar.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
-describe('SnackbarService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+const snackBarSpy = jasmine.createSpyObj("MatSnackBar", ["open"]);
+let snackBar: MatSnackBar;
 
-  it('should be created', () => {
+describe('SnackbarService', async() => {
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [],
+    providers: [
+      {provide: MatSnackBar, useValue: snackBarSpy},
+    ]
+  }),
+  snackBar = TestBed.get("MatSnackBar"),
+  );
+
+  it('should be created', async() => {
     const service: SnackbarService = TestBed.get(SnackbarService);
     expect(service).toBeTruthy();
   });
+
+  it('should call SnackbarService once', () => {
+    
+  }
+  )
 });

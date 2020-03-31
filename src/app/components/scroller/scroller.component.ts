@@ -29,3 +29,7 @@ export class ScrollerComponent {
     });
   }
 }
+
+@Component({selector: 'app-scroller', template: ''})
+export class ScrollerComponentStub{
+}

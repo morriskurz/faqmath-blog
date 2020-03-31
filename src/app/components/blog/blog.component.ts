@@ -18,10 +18,10 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   constructor(private _route: ActivatedRoute,
     private blogService: BlogService) {
-    if (this._route.snapshot.params['id']) {
-      this.postId = this._route.snapshot.paramMap.get('id');
+    if (this._route.snapshot.params['slug']) {
+      this.postId = this._route.snapshot.paramMap.get('slug');
     }
-  }
+  } 
 
   ngOnInit() {
     this.blogService.getPostbyId(this.postId)
@@ -37,4 +37,8 @@ export class BlogComponent implements OnInit, OnDestroy {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }
+}
+
+@Component({selector: 'app-blog', template: ''})
+export class BlogComponentStub{
 }

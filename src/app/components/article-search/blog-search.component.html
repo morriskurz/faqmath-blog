@@ -1,0 +1,12 @@
+<div id="search-component">
+
+    <input #searchBox class="rounded" id="search-box" (input)="search(searchBox.value)" />
+  
+    <ul class="search-result">
+      <li *ngFor="let post of posts$ | async" >
+        <a routerLink="/blogs/{{post.name}}">
+          {{post.name}}
+        </a>
+      </li>
+    </ul>
+  </div>

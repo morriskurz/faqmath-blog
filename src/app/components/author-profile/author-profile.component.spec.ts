@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthorProfileComponent } from './author-profile.component';
+import { NgMaterialModule } from '../../ng-material/ng-material.module';
 
 describe('AuthorProfileComponent', () => {
   let component: AuthorProfileComponent;
@@ -8,6 +9,7 @@ describe('AuthorProfileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [NgMaterialModule],
       declarations: [ AuthorProfileComponent ]
     })
     .compileComponents();

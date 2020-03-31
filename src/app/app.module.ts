@@ -30,12 +30,23 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
 import { AuthorProfileComponent } from './components/author-profile/author-profile.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminAuthGuard } from './guards/admin-auth.guard';
+import { BlogSearchComponent } from './components/article-search/blog-search.component';
+import { AddBlockComponent } from './add-block/add-block.component';
 
 const customConfig: ShareButtonsConfig = {
-  include: ['facebook', 'twitter', 'linkedin', 'reddit', 'whatsapp', 'telegram', 'print', 'email'],
+  include: [
+    'facebook',
+    'twitter',
+    'linkedin',
+    'reddit',
+    'whatsapp',
+    'telegram',
+    'print',
+    'email'
+  ],
   theme: 'circles-dark',
   autoSetMeta: true,
-  twitterAccount: 'ankitsharma_007'
+  twitterAccount: ''
 };
 
 @NgModule({
@@ -52,7 +63,9 @@ const customConfig: ShareButtonsConfig = {
     Slug,
     SocialShareComponent,
     PaginatorComponent,
-    AuthorProfileComponent
+    AuthorProfileComponent,
+    BlogSearchComponent,
+    AddBlockComponent
   ],
   imports: [
     NgxPaginationModule,
@@ -70,13 +83,21 @@ const customConfig: ShareButtonsConfig = {
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'page/:pagenum', component: HomeComponent },
-      { path: 'addpost', component: BlogEditorComponent, canActivate: [AuthGuard] },
-      { path: 'editpost/:id', component: BlogEditorComponent, canActivate: [AdminAuthGuard] },
-      { path: 'blog/:id/:slug', component: BlogComponent },
+      {
+        path: 'addpost',
+        component: BlogEditorComponent,
+        canActivate: [AdminAuthGuard]
+      },
+      {
+        path: 'editpost/:slug',
+        component: BlogEditorComponent,
+        canActivate: [AdminAuthGuard]
+      },
+      { path: 'blog/:slug', component: BlogComponent },
       { path: '**', component: HomeComponent }
-    ]),
+    ])
   ],
-  providers: [],
+  providers: [Slug],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

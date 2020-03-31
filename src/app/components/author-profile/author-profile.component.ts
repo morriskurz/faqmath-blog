@@ -13,3 +13,7 @@ export class AuthorProfileComponent implements OnInit {
   }
 
 }
+
+@Component({selector: 'app-author-profile', template: ''})
+export class AuthorProfileComponentStub{
+}

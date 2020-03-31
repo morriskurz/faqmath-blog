@@ -14,3 +14,7 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
+@Component({selector: 'app-home', template: ''})
+export class HomeComponentStub{
+}

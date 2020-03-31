@@ -26,3 +26,12 @@ export class PaginatorComponent {
   }
 
 }
+
+@Component({selector: 'app-paginator', template: ''})
+export class PaginatorComponentStub{
+  @Input()
+  pageSizeOptions: [];
+
+  @Input()
+  config: any;
+}

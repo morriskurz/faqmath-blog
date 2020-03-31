@@ -30,8 +30,8 @@ export class BlogEditorComponent implements OnInit, OnDestroy {
     private blogService: BlogService,
     private _router: Router,
     private authService: AuthService) {
-    if (this._route.snapshot.params['id']) {
-      this.postId = this._route.snapshot.paramMap.get('id');
+    if (this._route.snapshot.params['slug']) {
+      this.postId = this._route.snapshot.paramMap.get('slug');
     }
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
   }
@@ -98,4 +98,8 @@ export class BlogEditorComponent implements OnInit, OnDestroy {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }
+}
+
+@Component({selector: 'app-blog-editor', template: ''})
+export class BlogEditorComponentStub{
 }

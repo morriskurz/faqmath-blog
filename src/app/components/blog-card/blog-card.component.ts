@@ -74,3 +74,7 @@ export class BlogCardComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 }
+
+@Component({selector: 'app-blog-card', template: ''})
+export class BlogCardComponentStub{
+}

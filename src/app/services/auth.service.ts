@@ -60,3 +60,12 @@ export class AuthService {
     return userRef.set(data, { merge: true });
   }
 }
+
+export class AuthServiceMock{
+  appUser$ = of({
+    name: "testUser",
+    email: "test@gmail.com",
+    isAdmin: false,
+    photoURL: ""
+  });
+}

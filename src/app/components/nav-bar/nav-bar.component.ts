@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppUser } from 'src/app/models/appuser';
 import { AuthService } from 'src/app/services/auth.service';
 
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -26,4 +27,8 @@ export class NavBarComponent implements OnInit {
     this.authService.logout();
   }
 
+}
+
+@Component({selector: 'app-nav-bar', template: ''})
+export class NavBarComponentStub{
 }
