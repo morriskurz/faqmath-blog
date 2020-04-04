@@ -1,5 +1,6 @@
 <mat-toolbar class="nav-bar mat-elevation-z2">
-  <button mat-button [routerLink]='["/"]'> FAQ Math </button>
+  <button mat-button (click)="toggleSidenav()" title="Menü" *ngIf="sidenav"> <mat-icon>menu</mat-icon></button>
+  <button mat-button [routerLink]='["/"]' title="Startseite"> <mat-icon>school</mat-icon> FAQ Math </button>
   <ng-container *ngIf="appUser">
     <button mat-button [routerLinkActive]='["link-active"]' [routerLink]='["/addpost"]'>
       Add Post

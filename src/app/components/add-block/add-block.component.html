@@ -1,0 +1,12 @@
+<mat-menu #appMenu="matMenu">
+  <mat-grid-list cols="2">
+    <mat-grid-tile mat-menu-content><button>Settings</button></mat-grid-tile>
+  <mat-grid-tile mat-menu-content><button>Help</button></mat-grid-tile>
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Help</button>
+  </mat-grid-list>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>add_circle</mat-icon>
+  </button>
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>

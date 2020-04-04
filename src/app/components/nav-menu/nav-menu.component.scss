@@ -1,0 +1,18 @@
+app-nav-menu {
+    display: block;
+    margin: 0 auto;
+    max-width: 260px;
+    @include font-size(13);
+  
+    ul, a {
+      margin: 0;
+    }
+  
+    &:first-child {
+      margin-top: 16px;
+    }
+  
+    app-nav-item div a {
+      padding-left: 6px;
+    }
+  }

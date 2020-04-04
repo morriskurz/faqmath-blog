@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +12,7 @@ import { ShareButtonsModule } from '@ngx-share/buttons';
 import { ShareButtonsConfig } from '@ngx-share/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgMaterialModule } from './ng-material/ng-material.module';
+import { MatSliderModule } from '@angular/material/slider';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
@@ -31,7 +32,28 @@ import { AuthorProfileComponent } from './components/author-profile/author-profi
 import { AuthGuard } from './guards/auth.guard';
 import { AdminAuthGuard } from './guards/admin-auth.guard';
 import { BlogSearchComponent } from './components/article-search/blog-search.component';
-import { AddBlockComponent } from './add-block/add-block.component';
+import { AddBlockComponent } from './components/add-block/add-block.component';
+import { TextBlockComponent } from './components/text-block/text-block.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { MatSidenavModule, MatIconRegistry } from '@angular/material';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { NavItemComponent } from './components/nav-item/nav-item.component';
+import { TopMenuComponent } from './components/top-menu/top-menu.component';
+import { NotificationComponent } from './components/notification/notification.component';
+import { Deployment } from 'app/shared/deployment.service';
+import { DocumentService } from './documents/document.service';
+import { GaService } from './shared/ga.service';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { LocationService } from './shared/location.service';
+import { NavigationService } from './services/navigation.service';
+import { ScrollService } from './shared/scroll.service';
+import { ScrollSpyService } from './shared/scroll-spy.service';
+import { SearchService } from './search/search.service';
+import { TocService } from './shared/toc.service';
+import { CurrentDateToken, currentDateProvider } from './shared/current-date';
+import { WindowToken, windowProvider } from './shared/window';
+import { LoggerService } from './shared/logger.service';
+import { DeploymentService } from './shared/deployment.service';
 
 const customConfig: ShareButtonsConfig = {
   include: [
@@ -65,7 +87,13 @@ const customConfig: ShareButtonsConfig = {
     PaginatorComponent,
     AuthorProfileComponent,
     BlogSearchComponent,
-    AddBlockComponent
+    AddBlockComponent,
+    TextBlockComponent,
+    SideNavComponent,
+    NavMenuComponent,
+    NavItemComponent,
+    TopMenuComponent,
+    NotificationComponent
   ],
   imports: [
     NgxPaginationModule,
@@ -78,6 +106,8 @@ const customConfig: ShareButtonsConfig = {
     BrowserModule,
     BrowserAnimationsModule,
     NgMaterialModule,
+    MatSidenavModule,
+    MatSliderModule,
     CKEditorModule,
     FormsModule,
     RouterModule.forRoot([
@@ -97,7 +127,26 @@ const customConfig: ShareButtonsConfig = {
       { path: '**', component: HomeComponent }
     ])
   ],
-  providers: [Slug],
+  providers: [
+    Slug,
+    DeploymentService,
+    DocumentService,
+    //{ provide: ErrorHandler, useClass: ReportingErrorHandler },
+    GaService,
+    LoggerService,
+    Location,
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
+    LocationService,
+    //{ provide: MatIconRegistry, useClass: CustomIconRegistry },
+    NavigationService,
+    ScrollService,
+    ScrollSpyService,
+    SearchService,
+    //svgIconProviders,
+    TocService,
+    { provide: CurrentDateToken, useFactory: currentDateProvider },
+    { provide: WindowToken, useFactory: windowProvider },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

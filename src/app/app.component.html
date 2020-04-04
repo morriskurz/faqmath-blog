@@ -1,4 +1,20 @@
+<div id="top-of-page"></div>
 <app-nav-bar></app-nav-bar>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+
+
+<mat-sidenav-container class="sidenav-container" [class.starting]="isStarting" [class.has-floating-toc]="hasFloatingToc" role="main">
+
+  <mat-sidenav #sidenav [ngClass]="{'collapsed': !isSideBySide}" #sidenav class="sidenav" [mode]="mode" [opened]="isOpened" >
+    <app-nav-menu *ngIf="!isSideBySide" [nodes]="topMenuNarrowNodes" [currentNode]="currentNodes?.TopBarNarrow" [isWide]="false"></app-nav-menu>
+    <app-nav-menu [nodes]="sideNavNodes" [currentNode]="currentNodes?.SideNav" [isWide]="isSideBySide"></app-nav-menu>
+  </mat-sidenav>
+
+  <main class="sidenav-content" [id]="pageId" role="main">
+    <!--<aio-mode-banner [mode]="deployment.mode" [version]="versionInfo"></aio-mode-banner>
+    <aio-doc-viewer [class.no-animations]="isStarting" [doc]="currentDocument" (docReady)="onDocReady()" (docRemoved)="onDocRemoved()" (docInserted)="onDocInserted()" (docRendered)="onDocRendered()">
+    </aio-doc-viewer>
+    <aio-dt *ngIf="dtOn" [(doc)]="currentDocument"></aio-dt>-->
+    <router-outlet></router-outlet>
+  </main>
+
+</mat-sidenav-container>

@@ -1,0 +1,107 @@
+.sidenav-content {
+    min-height:100vh;
+    padding:80px 3rem 2rem;
+}
+.sidenav-content a {
+    color:#1976d2
+}
+.sidenav-content a:hover {
+    color:#6e6e6e
+}
+.sidenav-container {
+    width:100%;
+    height:100vh
+}
+mat-sidenav.mat-sidenav.sidenav {
+    position:fixed;
+    top:64px;
+    bottom:0;
+    left:0;
+    padding:0;
+    min-width:260px;
+    background-color:#fff;
+    box-shadow:6px 0 6px rgba(0,0,0,.1)
+   }
+   mat-sidenav.mat-sidenav.sidenav.collapsed {
+    top:56px
+   }
+   mat-sidenav-container.sidenav-container {
+    min-height:100%;
+    height:auto!important;
+    max-width:100%;
+    margin:0;
+    transform:none
+   }
+   mat-sidenav-container.sidenav-container.has-floating-toc {
+    max-width:82%
+   }
+   mat-sidenav-container.sidenav-container.mat-drawer-container.mat-sidenav-container,
+   mat-sidenav-container .sidenav-content {
+    background-color:#fff
+   }
+   mat-sidenav-container div.mat-sidenav-content {
+    height:auto
+   }
+   .vertical-menu-item {
+    box-sizing:border-box;
+    color:#444;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    overflow-wrap:break-word;
+    padding:8px;
+    text-decoration:none;
+    text-align:left;
+    width:100%;
+    word-wrap:break-word
+   }
+   .vertical-menu-item:hover {
+    background-color:#dbdbdb;
+    color:#1976d2;
+    text-shadow:0 0 5px #fff
+   }
+   .vertical-menu-item:focus {
+    outline:2px auto #1e88e5
+   }
+   .vertical-menu-item.selected {
+    color:#1976d2
+   }
+   .vertical-menu-item.level-2 {
+    padding-top:4px;
+    padding-bottom:4px
+   }
+   .vertical-menu-item span {
+    padding-right:32px
+   }
+   .vertical-menu-item .mat-icon {
+    height:24px;
+    width:24px
+   }
+   button.vertical-menu-item {
+    border:none;
+    background-color:transparent;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin:0;
+    width:100%
+   }
+.mat-drawer-inner-container {
+    width:100%;
+    height:100%;
+    overflow:auto;
+    -webkit-overflow-scrolling:touch
+}
+.level-1 {
+    font-family:Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    font-size:14px;
+    font-size:1.4rem;
+    font-weight:400;
+    padding-left:20px;
+    margin:0;
+    transition:background-color .2s;
+    text-transform:uppercase
+}
+* {
+    font-family:Roboto;
+}

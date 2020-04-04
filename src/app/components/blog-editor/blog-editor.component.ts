@@ -8,6 +8,8 @@ import { AppUser } from 'src/app/models/appuser';
 import { AuthService } from 'src/app/services/auth.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import MathType from '@wiris/mathtype-ckeditor5';
+
 
 @Component({
   selector: 'app-blog-editor',
@@ -74,7 +76,6 @@ export class BlogEditorComponent implements OnInit, OnDestroy {
 
   setEditorConfig() {
     this.ckeConfig = {
-      removePlugins: ['ImageUpload', 'MediaEmbed'],
       heading: {
         options: [
           { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
