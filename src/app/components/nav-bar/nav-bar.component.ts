@@ -13,7 +13,7 @@ import { SidenavService } from '../../services/sidenav.service';
 export class NavBarComponent implements OnInit {
   appUser: AppUser;
 
-  constructor(private authService: AuthService, 
+  constructor(private authService: AuthService,
     private sidenav: SidenavService) {
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
   }

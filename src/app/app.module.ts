@@ -34,13 +34,11 @@ import { AdminAuthGuard } from './guards/admin-auth.guard';
 import { BlogSearchComponent } from './components/article-search/blog-search.component';
 import { AddBlockComponent } from './components/add-block/add-block.component';
 import { TextBlockComponent } from './components/text-block/text-block.component';
-import { SideNavComponent } from './components/side-nav/side-nav.component';
-import { MatSidenavModule, MatIconRegistry } from '@angular/material';
+import { MatSidenavModule, MatIconRegistry, MatGridListModule } from '@angular/material';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { NavItemComponent } from './components/nav-item/nav-item.component';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
 import { NotificationComponent } from './components/notification/notification.component';
-import { Deployment } from 'app/shared/deployment.service';
 import { DocumentService } from './documents/document.service';
 import { GaService } from './shared/ga.service';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
@@ -89,7 +87,6 @@ const customConfig: ShareButtonsConfig = {
     BlogSearchComponent,
     AddBlockComponent,
     TextBlockComponent,
-    SideNavComponent,
     NavMenuComponent,
     NavItemComponent,
     TopMenuComponent,
@@ -108,6 +105,7 @@ const customConfig: ShareButtonsConfig = {
     NgMaterialModule,
     MatSidenavModule,
     MatSliderModule,
+    MatGridListModule,
     CKEditorModule,
     FormsModule,
     RouterModule.forRoot([

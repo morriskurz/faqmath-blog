@@ -83,6 +83,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   private currentUrl: string;
 
+  get isOpened() { return this.isSideBySide && this.isSideNavDoc; }
+  get mode() { return this.isSideBySide ? 'side' : 'over'; }
+
   constructor(
     private authService: AuthService,
     private sidenavService: SidenavService,
